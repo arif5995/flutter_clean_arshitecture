@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttercleanarshitecture/core/widget/background_orange.dart';
 import 'package:fluttercleanarshitecture/feature/Login/presentation/page/login_page.dart';
 
-class SplashScree extends StatelessWidget {
+class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _delay(context);
@@ -27,17 +28,17 @@ class SplashScree extends StatelessWidget {
               ],
             ),
           ),
-//          Positioned(
-//            bottom: 20.0,
-//            left: 0.0,
-//            right: 0.0,
-//            child: Center(
-//              child: SpinKitFoldingCube(
-//                size: 50.0,
-//                color: Colors.red,
-//              ),
-//            ),
-//          ),
+          Positioned(
+            bottom: 20.0,
+            left: 0.0,
+            right: 0.0,
+            child: Center(
+              child: SpinKitFoldingCube(
+                size: 50.0,
+                color: Colors.red,
+              ),
+            ),
+          ),
         ],
       ),
     );
