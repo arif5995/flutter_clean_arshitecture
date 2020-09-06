@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercleanarshitecture/core/widget/background_orange.dart';
+import 'package:fluttercleanarshitecture/feature/Login/presentation/page/login_page.dart';
 
 class SplashScree extends StatelessWidget {
   @override
@@ -49,7 +50,7 @@ void _delay(BuildContext context) {
     Navigator
         .of(context)
         .pushReplacement(MaterialPageRoute(
-        builder: (BuildContext context) => Container()));
+        builder: (BuildContext context) => LoginPage()));
     }
   );
 }
