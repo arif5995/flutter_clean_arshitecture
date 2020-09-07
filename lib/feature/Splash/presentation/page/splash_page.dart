@@ -6,7 +6,7 @@ import 'package:fluttercleanarshitecture/feature/Login/presentation/page/login_p
 class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    _delay(context);
+    //_delay(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -28,17 +28,17 @@ class SplashPage extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-            bottom: 20.0,
-            left: 0.0,
-            right: 0.0,
-            child: Center(
-              child: SpinKitFoldingCube(
-                size: 50.0,
-                color: Colors.red,
-              ),
-            ),
-          ),
+//          Positioned(
+//            bottom: 20.0,
+//            left: 0.0,
+//            right: 0.0,
+//            child: Center(
+//              child: SpinKitFoldingCube(
+//                size: 50.0,
+//                color: Colors.red,
+//              ),
+//            ),
+//          ),
         ],
       ),
     );

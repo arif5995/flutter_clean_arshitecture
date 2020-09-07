@@ -1,3 +1,5 @@
+import 'package:fluttercleanarshitecture/feature/Login/data/datasource/auth_datasource.dart';
+import 'package:fluttercleanarshitecture/feature/Login/data/datasource/auth_datasourceImp.dart';
 import 'package:fluttercleanarshitecture/feature/Login/data/repositories/auth_repositoryImpl.dart';
 import 'package:fluttercleanarshitecture/feature/Login/domain/repositories/auth_repository.dart';
 import 'package:fluttercleanarshitecture/feature/Login/domain/usecase/auth_usecase.dart';
@@ -15,6 +17,8 @@ Future<void> init() async{
   sl.registerLazySingleton(() => AuthUsecase(sl()));
 
   sl.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl());
+  
+  sl.registerLazySingleton<AuthDataSource>(() => AuthDataSourceImp(secureStorage: sl()));
 
   final sharedPreferences = await SharedPreferences.getInstance();
 

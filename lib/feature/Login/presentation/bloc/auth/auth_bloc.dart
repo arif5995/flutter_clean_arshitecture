@@ -11,12 +11,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final _logger = Logger();
   final AuthUsecase _authUsecase;
 
-  AuthBloc({
-    @required AuthUsecase usecase
-  }) : _authUsecase=usecase;
+  AuthBloc({@required AuthUsecase usecase}) : _authUsecase = usecase;
 
   @override
-  AuthState get initialState => throw AuthStateUninitialized();
+  AuthState get initialState => AuthStateUninitialized();
 
   @override
   Stream<AuthState> mapEventToState(AuthEvent event) async* {
@@ -34,12 +32,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     }
 
-    if (event is AuthEventLoggedIn){
+    if (event is AuthEventLoggedIn) {
       sl<SharedPreferences>().setString('environment', event.environment);
       sl<SharedPreferences>().setString('username', event.username);
       sl<SharedPreferences>().setString('token', event.userInfo['token']);
       yield AuthStateAuthorized();
     }
   }
-
 }

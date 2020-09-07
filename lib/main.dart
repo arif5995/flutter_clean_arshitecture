@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttercleanarshitecture/feature/Login/presentation/bloc/auth/auth_bloc.dart';
-import 'package:fluttercleanarshitecture/feature/Login/presentation/bloc/auth/auth_event.dart';
-import 'package:fluttercleanarshitecture/feature/Login/presentation/bloc/auth/auth_state.dart';
 import 'package:fluttercleanarshitecture/feature/Login/presentation/page/login_page.dart';
 import 'package:fluttercleanarshitecture/feature/Splash/presentation/page/splash_page.dart';
 import 'package:fluttercleanarshitecture/sevices_locator.dart';
 import 'package:logger/logger.dart';
 import 'package:fluttercleanarshitecture/sevices_locator.dart' as servicelocator;
+
+import 'feature/Login/presentation/bloc/auth/bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
