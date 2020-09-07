@@ -39,6 +39,7 @@ dependencies:
   json_annotation: ^3.0.0
   flutter_secure_storage: ^3.3.3
   http: ^0.12.0+2
+  bloc: ^3.0.0
 
   #UserInterface
   hexcolor: ^1.0.4
