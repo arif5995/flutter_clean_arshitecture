@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttercleanarshitecture/feature/Login/domain/usecase/auth_usecase.dart';
+import 'package:fluttercleanarshitecture/feature/Login/presentation/bloc/login/login_bloc.dart';
 import 'package:fluttercleanarshitecture/feature/Login/presentation/page/login_page.dart';
 import 'package:fluttercleanarshitecture/feature/Splash/presentation/page/splash_page.dart';
 import 'package:fluttercleanarshitecture/sevices_locator.dart';
 import 'package:logger/logger.dart';
-import 'package:fluttercleanarshitecture/sevices_locator.dart' as servicelocator;
 
 import 'feature/Login/presentation/bloc/auth/bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Logger.level = Level.verbose;
-  await servicelocator.init();
+  await init();
   runApp(BlocProvider<AuthBloc>(
     create: (_) => sl<AuthBloc>()..add(AuthEventAppStarted()),
     child: MyApp(),
@@ -35,7 +36,15 @@ class MyApp extends StatelessWidget {
 
           if (state is AuthStateUnauthorized) {
             _logger.v('Showing login page.');
-            return LoginPage();
+            return BlocProvider<LoginBloc>(
+              create: (context) {
+                  return LoginBloc(
+                    authBloc: BlocProvider.of<AuthBloc>(context),
+                    authUsecase: sl<AuthUsecase>()
+                  );
+              },
+              child: LoginPage(),
+            );
           }
 
           if (state is AuthStateAuthorized) {

@@ -8,6 +8,7 @@ Widget TextFormInput(
       Function onSaved,
       bool isEmail,
       EdgeInsets paddingForm,
+      Function validator,
       TextEditingController controllerName,
       GestureDetector pass}) {
   return Padding(
@@ -27,6 +28,8 @@ Widget TextFormInput(
       obscureText: isPassword,
       controller: controllerName,
       keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,
+      onSaved: onSaved,
+      validator: validator ,
     ),
   );
 }

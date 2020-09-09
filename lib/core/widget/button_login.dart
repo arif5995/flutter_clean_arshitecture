@@ -4,10 +4,10 @@ import 'package:fluttercleanarshitecture/core/constant/size_circular.dart';
 import 'package:fluttercleanarshitecture/core/constant/size_padding.dart';
 import 'package:fluttercleanarshitecture/core/constant/size_text.dart';
 
-Widget ButtonLogin({Function onPress, String textName}) {
+Widget ButtonLogin({Function onPress, String textName, List<Color> color}) {
   return Padding(
     padding: EdgeInsets.only(
-        top: PaddingConstant.formInput,
+        top: PaddingConstant.formInputLow,
         left: PaddingConstant.formInput,
         right: PaddingConstant.formInput),
     child: RaisedButton(
@@ -19,7 +19,7 @@ Widget ButtonLogin({Function onPress, String textName}) {
       child: Ink(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: ColorCustom.redGradient,
+              colors: color,
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),

@@ -28,17 +28,17 @@ class SplashPage extends StatelessWidget {
               ],
             ),
           ),
-//          Positioned(
-//            bottom: 20.0,
-//            left: 0.0,
-//            right: 0.0,
-//            child: Center(
-//              child: SpinKitFoldingCube(
-//                size: 50.0,
-//                color: Colors.red,
-//              ),
-//            ),
-//          ),
+          Positioned(
+            bottom: 20.0,
+            left: 0.0,
+            right: 0.0,
+            child: Center(
+              child: SpinKitFoldingCube(
+                size: 50.0,
+                color: Colors.red,
+              ),
+            ),
+          ),
         ],
       ),
     );
